@@ -1,0 +1,436 @@
+$font-style: "Black Ops One", cursive;
+$font-primary: "Kanit", sans-serif;
+
+$primary-color: #61bfcd;
+$nav-color: #4a5863;
+
+$app-height: 700px;
+
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: $font-primary;
+}
+
+body {
+    height: 100vh;
+    position: relative;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://c.wallhere.com/photos/89/0b/digital_art_artwork_ruin_futuristic_apocalyptic_building-166360.jpg!d);
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.app {
+    margin: 100px;
+    width: 1000px;
+    overflow: hidden;
+    border: 4px solid $nav-color;
+    border-radius: 30px;
+    height: $app-height;
+    box-shadow: 0px 10px 10px $primary-color;
+}
+
+.header {
+    display: flex;
+    height: 100px;
+    background-color: transparent;
+    span i {
+        font-size: 50px;
+        cursor: pointer;
+        color: $primary-color;
+        text-shadow: 1px 5px 4px black;
+        transition: all 0.3s;
+        &:hover {
+            transform: scale(1.3);
+        }
+    }
+    h1 {
+        font-family: $font-style;
+        color: $primary-color;
+        text-shadow: 0px 5px 3px white;
+        font-size: 60px;
+        height: 100%;
+        min-width: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .header-search {
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        height: 100%;
+
+        label {
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+        }
+        input {
+            border: none;
+            width: 100%;
+            color: white;
+            font-size: 30px;
+            outline: none;
+            padding: 20px;
+            background-color: transparent;
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.658);
+            }
+        }
+    }
+}
+.action {
+    height: 80px;
+    overflow: hidden;
+    transition: 0.3s;
+    &-header {
+        display: flex;
+        align-items: center;
+        height: 80px;
+        width: 100%;
+        gap: 10px;
+        padding: 5px;
+    }
+    .sort {
+        width: 100px;
+        position: relative;
+        &-icon {
+            display: flex;
+            :nth-child(1) {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                border-right: 1px solid $nav-color;
+            }
+            :nth-child(2) {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+        }
+
+        i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            cursor: pointer;
+            height: 23px;
+            width: 50px;
+            background-color: #e9edf6;
+            box-shadow: 0px 4px black;
+            &:active {
+                transform: translateY(2px);
+                box-shadow: 0px 2px black;
+            }
+        }
+        select {
+            outline: none;
+            width: 100%;
+            text-align: center;
+            border: none;
+            margin-top: 4px;
+            background-color: #e9edf6;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0px 4px black;
+            &:active {
+                transform: translateY(2px);
+                box-shadow: 0px 2px black;
+            }
+        }
+    }
+    .create {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        flex-shrink: 0;
+        gap: 5px;
+        border-radius: 10px;
+        background-color: transparent;
+        font-size: 20px;
+        color: black;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0px 4px black;
+        height: 50px;
+        z-index: 0;
+
+        &:active {
+            box-shadow: 0px 2px black;
+            transform: translateY(2px);
+        }
+        &:hover {
+            color: white;
+        }
+        &::before {
+            transition: 0.3s;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 300%;
+            width: 100%;
+            z-index: -1;
+            transition: 0.5s;
+            background-image: linear-gradient($nav-color, $primary-color, $primary-color, $nav-color);
+        }
+        &:hover::before {
+            top: -50px;
+        }
+    }
+    #div1,
+    #div2 {
+        padding: 10px;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e9edf6;
+        box-shadow: 0px 4px black;
+        font-size: 25px;
+        cursor: pointer;
+
+        &:active {
+            box-shadow: 0px 2px black;
+            transform: translateY(2px);
+        }
+        &:hover i {
+            transition: 0.2s;
+            transform: scale(1.2);
+        }
+    }
+    #div1 {
+        margin-right: -10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-right: 1.5px solid #4a5863;
+    }
+    #div2 {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .more {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 100px;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 10px;
+        background-color: #e9edf6;
+        box-shadow: 0px 4px black;
+        cursor: pointer;
+
+        &:active {
+            box-shadow: 0px 2px black;
+            transform: translateY(2px);
+        }
+        i {
+            font-size: 25px;
+        }
+        &:hover i {
+            transition: 0.6s;
+            text-shadow: 0px 6px 0px black;
+            transform: scale(1.3);
+        }
+    }
+    .add {
+        display: flex;
+        align-items: center;
+        height: auto;
+        height: 180px;
+        padding: 5px;
+        backdrop-filter: blur(100px);
+        position: relative;
+        h1 {
+            line-height: 50px;
+            color: rgb(255, 255, 255);
+            font-size: 25px;
+            text-shadow: 0px 2px 0px black;
+        }
+        .add-up {
+            position: absolute;
+            top: -32px;
+            font-size: 30px;
+            left: 65%;
+            transform: translateX(-50%);
+            i {
+                color: black;
+                text-shadow: 0px 0px 2px $primary-color;
+            }
+            :nth-child(1) {
+                transform: translate(52px, -16px);
+                transition: 0.5s;
+            }
+            :nth-child(2) {
+                transform: translate(18px, -1px);
+                transition: 3s;
+            }
+
+            span {
+                width: 2px;
+                right: 0;
+                top: 0;
+                position: absolute;
+                height: 0px;
+                transform: translate(-7px, 23px);
+                background-color: black;
+            }
+        }
+        .add-close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            &:hover i {
+                transition: 0.5s;
+                color: $nav-color;
+            }
+            i {
+                font-size: 25px;
+                cursor: pointer;
+            }
+        }
+        &-box {
+            h4 {
+                min-width: 80px;
+                transform: translateY(-3px);
+                color: white;
+                text-shadow: 0px 2px 0px black;
+            }
+            input {
+                outline: none;
+                padding-left: 10px;
+                padding-right: 10px;
+                border: none;
+                width: 200px;
+                border-bottom: 3px solid black;
+                background-color: white;
+                border-radius: 20px;
+            }
+            i {
+                font-size: 20px;
+                margin-left: 3px;
+                color: white;
+            }
+        }
+    }
+    .status {
+        display: flex;
+        select {
+            width: 200px;
+            border: none;
+            border-bottom: 3px solid black;
+            background-color: white;
+            border-radius: 20px;
+            outline: none;
+            padding-left: 7px;
+        }
+        display: flex;
+        align-items: center;
+    }
+    .jobgroup {
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        align-items: center;
+    }
+    .jobname {
+        display: flex;
+        align-items: center;
+    }
+
+    .deadline {
+        label {
+            font-size: 15px;
+            margin-right: 4px;
+            color: white;
+            text-shadow: 0px 3px 0px black;
+        }
+        display: flex;
+        align-items: center;
+        margin-top: 7px;
+        input {
+            width: 50px;
+            padding-right: 5px;
+        }
+    }
+    .jobcontent {
+        margin-left: 10px;
+        margin-right: 10px;
+        display: flex;
+        flex-direction: column;
+        h4 {
+            color: white;
+            text-shadow: 0px 2px 0px black;
+        }
+
+        textarea {
+            resize: none;
+            border: none;
+            outline: none;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            padding: 10px;
+            color: black;
+        }
+    }
+
+    #add-job {
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        font-size: 30px;
+        box-shadow: 0px 4px black;
+        flex-shrink: 0;
+        i {
+            font-size: 30px;
+        }
+        &:active {
+            box-shadow: 0px 2px black;
+            transform: translateY(2px);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 530%;
+            width: 100%;
+            z-index: -1;
+            background-image: linear-gradient($nav-color, $primary-color, $primary-color, $nav-color);
+        }
+
+        &:hover {
+            color: white;
+        }
+        &:hover::before {
+            transition: 0.5s;
+            top: -100px;
+        }
+    }
+}

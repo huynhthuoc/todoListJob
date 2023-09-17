@@ -1,0 +1,660 @@
+* {
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://c.wallhere.com/photos/89/0b/digital_art_artwork_ruin_futuristic_apocalyptic_building-166360.jpg!d);
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.app {
+  margin: 100px;
+  width: 1000px;
+  overflow: hidden;
+  border: 4px solid #4a5863;
+  border-radius: 30px;
+  height: 700px;
+  box-shadow: 0px 10px 10px #61bfcd;
+}
+
+.header {
+  display: flex;
+  height: 100px;
+  background-color: transparent;
+}
+.header span i {
+  font-size: 50px;
+  cursor: pointer;
+  color: #61bfcd;
+  text-shadow: 1px 5px 4px black;
+  transition: all 0.3s;
+}
+.header span i:hover {
+  transform: scale(1.3);
+}
+.header h1 {
+  font-family: "Black Ops One", cursive;
+  color: #61bfcd;
+  text-shadow: 0px 5px 3px white;
+  font-size: 60px;
+  height: 100%;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .header-search {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+.header .header-search label {
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+.header .header-search input {
+  border: none;
+  width: 100%;
+  color: white;
+  font-size: 30px;
+  outline: none;
+  padding: 20px;
+  background-color: transparent;
+}
+.header .header-search input::placeholder {
+  color: rgba(255, 255, 255, 0.658);
+}
+
+.action {
+  height: 80px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.action-header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  gap: 10px;
+  padding: 5px;
+}
+.action .sort {
+  width: 100px;
+  position: relative;
+}
+.action .sort-icon {
+  display: flex;
+}
+.action .sort-icon :nth-child(1) {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: 1px solid #4a5863;
+}
+.action .sort-icon :nth-child(2) {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.action .sort i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  cursor: pointer;
+  height: 23px;
+  width: 50px;
+  background-color: #e9edf6;
+  box-shadow: 0px 4px black;
+}
+.action .sort i:active {
+  transform: translateY(2px);
+  box-shadow: 0px 2px black;
+}
+.action .sort select {
+  outline: none;
+  width: 100%;
+  text-align: center;
+  border: none;
+  margin-top: 4px;
+  background-color: #e9edf6;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0px 4px black;
+}
+.action .sort select:active {
+  transform: translateY(2px);
+  box-shadow: 0px 2px black;
+}
+.action .create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-shrink: 0;
+  gap: 5px;
+  border-radius: 10px;
+  background-color: transparent;
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 4px black;
+  height: 50px;
+  z-index: 0;
+}
+.action .create:active {
+  box-shadow: 0px 2px black;
+  transform: translateY(2px);
+}
+.action .create:hover {
+  color: white;
+}
+.action .create::before {
+  transition: 0.3s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 300%;
+  width: 100%;
+  z-index: -1;
+  transition: 0.5s;
+  background-image: linear-gradient(#4a5863, #61bfcd, #61bfcd, #4a5863);
+}
+.action .create:hover::before {
+  top: -50px;
+}
+.action #div1,
+.action #div2 {
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9edf6;
+  box-shadow: 0px 4px black;
+  font-size: 25px;
+  cursor: pointer;
+}
+.action #div1:active,
+.action #div2:active {
+  box-shadow: 0px 2px black;
+  transform: translateY(2px);
+}
+.action #div1:hover i,
+.action #div2:hover i {
+  transition: 0.2s;
+  transform: scale(1.2);
+}
+.action #div1 {
+  margin-right: -10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-right: 1.5px solid #4a5863;
+}
+.action #div2 {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.action .more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #e9edf6;
+  box-shadow: 0px 4px black;
+  cursor: pointer;
+}
+.action .more:active {
+  box-shadow: 0px 2px black;
+  transform: translateY(2px);
+}
+.action .more i {
+  font-size: 25px;
+}
+.action .more:hover i {
+  transition: 0.6s;
+  text-shadow: 0px 6px 0px black;
+  transform: scale(1.3);
+}
+.action .add {
+  display: flex;
+  align-items: center;
+  height: auto;
+  height: 180px;
+  padding: 5px;
+  backdrop-filter: blur(100px);
+  position: relative;
+}
+.action .add h1 {
+  line-height: 50px;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  text-shadow: 0px 2px 0px black;
+}
+.action .add .add-up {
+  position: absolute;
+  top: -32px;
+  font-size: 30px;
+  left: 65%;
+  transform: translateX(-50%);
+}
+.action .add .add-up i {
+  color: black;
+  text-shadow: 0px 0px 2px #61bfcd;
+}
+.action .add .add-up :nth-child(1) {
+  transform: translate(52px, -16px);
+  transition: 0.5s;
+}
+.action .add .add-up :nth-child(2) {
+  transform: translate(18px, -1px);
+  transition: 3s;
+}
+.action .add .add-up span {
+  width: 2px;
+  right: 0;
+  top: 0;
+  position: absolute;
+  height: 0px;
+  transform: translate(-7px, 23px);
+  background-color: black;
+}
+.action .add .add-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.action .add .add-close:hover i {
+  transition: 0.5s;
+  color: #4a5863;
+}
+.action .add .add-close i {
+  font-size: 25px;
+  cursor: pointer;
+}
+.action .add-box h4 {
+  min-width: 80px;
+  transform: translateY(-3px);
+  color: white;
+  text-shadow: 0px 2px 0px black;
+}
+.action .add-box input {
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  width: 200px;
+  border-bottom: 3px solid black;
+  background-color: white;
+  border-radius: 20px;
+}
+.action .add-box i {
+  font-size: 20px;
+  margin-left: 3px;
+  color: white;
+}
+.action .status {
+  display: flex;
+  display: flex;
+  align-items: center;
+}
+.action .status select {
+  width: 200px;
+  border: none;
+  border-bottom: 3px solid black;
+  background-color: white;
+  border-radius: 20px;
+  outline: none;
+  padding-left: 7px;
+}
+.action .jobgroup {
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+.action .jobname {
+  display: flex;
+  align-items: center;
+}
+.action .deadline {
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+}
+.action .deadline label {
+  font-size: 15px;
+  margin-right: 4px;
+  color: white;
+  text-shadow: 0px 3px 0px black;
+}
+.action .deadline input {
+  width: 50px;
+  padding-right: 5px;
+}
+.action .jobcontent {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.action .jobcontent h4 {
+  color: white;
+  text-shadow: 0px 2px 0px black;
+}
+.action .jobcontent textarea {
+  resize: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  color: black;
+}
+.action #add-job {
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  font-size: 30px;
+  box-shadow: 0px 4px black;
+  flex-shrink: 0;
+}
+.action #add-job i {
+  font-size: 30px;
+}
+.action #add-job:active {
+  box-shadow: 0px 2px black;
+  transform: translateY(2px);
+}
+.action #add-job::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 530%;
+  width: 100%;
+  z-index: -1;
+  background-image: linear-gradient(#4a5863, #61bfcd, #61bfcd, #4a5863);
+}
+.action #add-job:hover {
+  color: white;
+}
+.action #add-job:hover::before {
+  transition: 0.5s;
+  top: -100px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(http://www.photoshoplady.com/wp-content/uploads/2009/05/Create-a-Super-Abstract-Lin.png);
+}
+
+/* Handle on hover */
+.all-jobs {
+  width: 100%;
+  overflow: hidden;
+  pointer-events: inherit;
+}
+.all-jobs .job-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: rgba(0, 0, 0, 0.808);
+  color: white;
+}
+.all-jobs .job-nav ul li:not(.job-checkall) {
+  font-size: 20px;
+  height: 30px;
+  border-left: 2px solid rgb(0, 0, 0);
+  border-top-left-radius: 30px;
+  transition: 0.3s ease;
+  flex-shrink: 0;
+}
+.all-jobs .job-nav ul li:not(.job-checkall):hover {
+  color: #61bfcd;
+  text-shadow: 0px 3px 1px black;
+}
+.all-jobs .job-nav ul .job-checkall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  border: 3px solid black;
+  margin-right: 2px;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.all-jobs .job-nav ul .job-checkall:hover {
+  color: #61bfcd;
+  text-shadow: 0px 2px 0px black;
+}
+.all-jobs .job-nav ul .job-checkall.active {
+  color: #61bfcd;
+  text-shadow: 0px 2px 0px black;
+}
+.all-jobs .job-nav ul .i2 {
+  width: 60px;
+}
+.all-jobs .job-nav ul .i3,
+.all-jobs .job-nav ul .i4,
+.all-jobs .job-nav ul .i5 {
+  width: 100px;
+}
+.all-jobs .job-nav ul .i6 {
+  width: 310px;
+}
+.all-jobs .job-nav ul .i7 {
+  min-width: 160px;
+}
+.all-jobs .job-nav ul .i8 {
+  min-width: 120px;
+}
+.all-jobs .jobs-list {
+  width: 100%;
+  overflow-y: scroll;
+  height: 480px;
+  scroll-behavior: smooth;
+}
+.all-jobs .jobs-list.active {
+  height: 300px;
+}
+.all-jobs .jobs-list ul {
+  border: 0.5px solid black;
+  border-right: none;
+  transition: 1s;
+  padding-left: 5px;
+  padding-right: 5px;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.all-jobs .jobs-list ul:hover {
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-image: url(http://www.photoshoplady.com/wp-content/uploads/2009/05/Create-a-Super-Abstract-Lin.png);
+}
+.all-jobs .jobs-list ul:hover li {
+  color: #61bfcd;
+}
+.all-jobs .jobs-list ul.active {
+  background-image: url(http://www.photoshoplady.com/wp-content/uploads/2009/05/Create-a-Super-Abstract-Lin.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.all-jobs .jobs-list ul.donejob {
+  position: relative;
+  transition: 2s;
+}
+.all-jobs .jobs-list ul.donejob::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  content: "Done";
+  height: 20px;
+  line-height: 20px;
+  border-radius: 20px;
+  background-color: rgb(5, 5, 5);
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  animation: holdOn1 5s 1 3s;
+  transition: linear;
+  transition: 2s;
+}
+.all-jobs .jobs-list ul.donejob::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  width: 95%;
+  height: 2px;
+  border-radius: 50px;
+  background-color: black;
+  transform: translateY(-50%);
+  animation: holdOn 4s 1;
+  transition: linear;
+  transition: 2s;
+}
+.all-jobs .jobs-list ul.done {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  background-image: url();
+}
+.all-jobs .jobs-list ul li {
+  padding-right: 2px;
+  flex-shrink: 0;
+  padding-left: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  line-height: 30px;
+  text-overflow: ellipsis;
+  height: 30px;
+  font-family: "Kanit", sans-serif;
+  color: white;
+  backdrop-filter: blur(1px);
+}
+.all-jobs .jobs-list ul li p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 2px;
+  padding-right: 20px;
+  height: 30px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: 0.5s;
+}
+.all-jobs .jobs-list ul li p i {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  margin-right: -10px;
+  font-size: 25px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 900;
+  z-index: 9;
+  transform: rotate(-45deg);
+}
+.all-jobs .jobs-list ul li p i:hover {
+  color: white;
+}
+.all-jobs .jobs-list ul .j1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  border: 3px solid black;
+  margin-right: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  transform: translateX(-1.5px);
+}
+.all-jobs .jobs-list ul .j1 .bx-check {
+  font-size: 20px;
+}
+.all-jobs .jobs-list ul .j2 {
+  width: 60px;
+}
+.all-jobs .jobs-list ul .j3,
+.all-jobs .jobs-list ul .j4,
+.all-jobs .jobs-list ul .j5 {
+  width: 100px;
+}
+.all-jobs .jobs-list ul .j6 {
+  width: 310px;
+}
+.all-jobs .jobs-list ul .j7 {
+  width: 160px;
+}
+.all-jobs .jobs-list ul .j8 {
+  width: 120px;
+}
+
+/*# sourceMappingURL=style.css.map */

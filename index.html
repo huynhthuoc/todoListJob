@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/style.jpg">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Kanit:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./sass/style.css">
+    <title>J O B</title>
+    <!-- <meta name="title" content="" />
+    <meta name="description" content="" />
+    <meta property="og:locale" content="vi" />
+    <meta property="og:type" content="acticle" />
+    <meta property="og:title" content="Home" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:image" content="" /> -->
+
+</head>
+
+<body>
+    <div class="app">
+        <header class="header">
+            <h1 title="Huỳnh Thuộc">IMT</h1>
+
+            <div class="header-search">
+                <label title="search" for="search"><i class='bx bx-search-alt'></i></label>
+                <input spellcheck="false" autocomplete="off" placeholder="Search Job (id,Gruop,job)" type="text"
+                    id="search">
+            </div>
+
+            <span><i title="Close" class='bx bx-x'></i></i></span>
+        </header>
+
+        <section class="action">
+            <div class="action-header">
+                <div class="create">
+                    <i class='bx bx-plus-medical'></i>
+                    <p>Create job</p>
+                </div>
+
+                <div class="sort">
+                    <div class="sort-icon">
+                        <i class='bx bx-sort-up'></i>
+                        <i class='bx bx-sort-down'></i>
+
+                    </div>
+
+                    <select name="sorrjob" id="sorrjob">
+                        <option value="iD">ID</option>
+                        <option disabled="disabled" value="status">Status</option>
+                        <option disabled="disabled" value="deadline">Deadline</option>
+                    </select>
+
+                </div>
+                <div id="div1"><i class='bx bx-edit'></i></div>
+
+                <div id="div2"><i class='bx bx-trash'></i></div>
+
+
+                <div class="more">
+                    <p>Done</p>
+                </div>
+            </div>
+
+            <div class="add">
+                <div class="add-up">
+                    <i class='bx bxl-mailchimp'></i>
+                    <i class='bx bx-handicap'></i>
+                    <i class='bx bxs-cog'></i>
+                    <span></span>
+                </div>
+                <span class="add-close"><i class='bx bx-chevron-up-circle'></i></span>
+                <div class="add-box">
+                    <h1>Create New Job</h1>
+                    <div class="status">
+                        <h4>Status</h4>
+                        <select name="status" id="status">
+                            <option value="normal">Normal</option>
+                            <option value="warning">Warning</option>
+                            <option value="Error">Error</option>
+                        </select>
+                        <i></i>
+                    </div>
+
+                    <div class="jobgroup">
+                        <h4>Gruop</h4>
+                        <input spellcheck="false" autocomplete="off" type="text">
+                        <i class='bx bxs-group'></i>
+                    </div>
+
+                    <div class="jobname">
+                        <h4>Job</h4>
+                        <input spellcheck="false" autocomplete="off" type="text">
+                        <i class='bx bxs-briefcase'></i>
+                    </div>
+
+                    <div class="deadline">
+                        <h4>Deadline</h4>
+                        <label for="date">Date</label>
+                        <input spellcheck="false" autocomplete="off" type="number" name="date" id="date">
+                        <label for="month">Month</label>
+                        <input spellcheck="false" autocomplete="off" type="number" name="month" id="month">
+                        <label for="year">Year</label>
+                        <input spellcheck="false" autocomplete="off" type="number" name="year" id="year">
+                    </div>
+                </div>
+
+                <div class="jobcontent">
+                    <h4>Content</h4>
+                    <textarea spellcheck="false" name="" id="jobcontent" cols="70" rows="6"></textarea>
+                </div>
+
+                <button id="add-job"><i class='bx bxs-save'></i></button>
+            </div>
+        </section>
+
+        <section class="all-jobs">
+            <header class="job-nav">
+                <ul>
+                    <li class="job-checkall"><i class='bx bx-check-double'></i></li>
+                    <li class="i2">ID</li>
+                    <li class="i3">Status</li>
+                    <li class="i4">Gruop</li>
+                    <li class="i5">Job</li>
+                    <li class="i6">Contents</li>
+                    <li class="i7">Deadline</li>
+                    <li class="i8">Create Day</li>
+                </ul>
+            </header>
+            <div class="jobs-list">
+            </div>
+        </section>
+    </div>
+    <script src=" index.js"></script>
+</body>
+
+</html>

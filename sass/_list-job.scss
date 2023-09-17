@@ -1,0 +1,247 @@
+$active-color: #eef7e2;
+$check-color: #8dc73c;
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(http://www.photoshoplady.com/wp-content/uploads/2009/05/Create-a-Super-Abstract-Lin.png);
+}
+
+/* Handle on hover */
+
+.all-jobs {
+    width: 100%;
+    overflow: hidden;
+    pointer-events: inherit;
+    .job-nav {
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            height: 30px;
+            padding-left: 5px;
+            padding-right: 5px;
+            background-color: rgba(0, 0, 0, 0.808);
+            color: white;
+            li:not(.job-checkall) {
+                font-size: 20px;
+                height: 30px;
+                border-left: 2px solid rgb(0, 0, 0);
+                border-top-left-radius: 30px;
+                transition: 0.3s ease;
+                flex-shrink: 0;
+                &:hover {
+                    color: $primary-color;
+                    text-shadow: 0px 3px 1px black;
+                }
+            }
+            .job-checkall {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 26px;
+                height: 26px;
+                border: 3px solid black;
+                margin-right: 2px;
+                border-radius: 5px;
+                font-size: 24px;
+                font-weight: 900;
+                cursor: pointer;
+                transition: 0.5s;
+                &:hover {
+                    color: $primary-color;
+                    text-shadow: 0px 2px 0px black;
+                }
+                &.active {
+                    color: $primary-color;
+                    text-shadow: 0px 2px 0px black;
+                }
+            }
+            .i2 {
+                width: 60px;
+            }
+            .i3,
+            .i4,
+            .i5 {
+                width: 100px;
+            }
+            .i6 {
+                width: 310px;
+            }
+
+            .i7 {
+                min-width: 160px;
+            }
+            .i8 {
+                min-width: 120px;
+            }
+        }
+    }
+    .jobs-list {
+        width: 100%;
+        overflow-y: scroll;
+        height: 480px;
+        scroll-behavior: smooth;
+        &.active {
+            height: 300px;
+        }
+        ul {
+            border: 0.5px solid black;
+            border-right: none;
+            transition: 1s;
+
+            &:hover {
+                background-size: cover;
+                background-position: right;
+                background-repeat: no-repeat;
+                background-image: url(http://www.photoshoplady.com/wp-content/uploads/2009/05/Create-a-Super-Abstract-Lin.png);
+                li {
+                    color: $primary-color;
+                }
+            }
+            &.active {
+                background-image: url(http://www.photoshoplady.com/wp-content/uploads/2009/05/Create-a-Super-Abstract-Lin.png);
+                background-position: right;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            &.donejob {
+                position: relative;
+                transition: 2s;
+                &::before {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 200px;
+                    content: "Done";
+                    height: 20px;
+                    line-height: 20px;
+                    border-radius: 20px;
+                    background-color: rgb(5, 5, 5);
+                    color: rgb(255, 255, 255);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transform: translate(-50%, -50%);
+                    z-index: 1000;
+                    animation: holdOn1 5s 1 3s;
+                    transition: linear;
+                    transition: 2s;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 0px;
+                    width: 95%;
+                    height: 2px;
+                    border-radius: 50px;
+                    background-color: black;
+                    transform: translateY(-50%);
+                    animation: holdOn 4s 1;
+                    transition: linear;
+                    transition: 2s;
+                }
+            }
+            padding-left: 5px;
+            padding-right: 5px;
+            list-style: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+
+            &.done {
+                background-size: cover;
+                background-position: center;
+                color: white;
+                background-image: url();
+            }
+            li {
+                padding-right: 2px;
+                flex-shrink: 0;
+                padding-left: 2px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 15px;
+                line-height: 30px;
+                text-overflow: ellipsis;
+                height: 30px;
+                font-family: $font-primary;
+                color: white;
+                backdrop-filter: blur(1px);
+
+                p {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    padding-left: 2px;
+                    padding-right: 20px;
+                    height: 30px;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    transition: 0.5s;
+                    i {
+                        position: absolute;
+                        top: 2px;
+                        right: 5px;
+                        margin-right: -10px;
+                        font-size: 25px;
+                        height: 30px;
+                        border: none;
+                        cursor: pointer;
+                        transition: 0.3s;
+                        font-weight: 900;
+                        z-index: 9;
+                        transform: rotate(-45deg);
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .j1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 26px;
+                height: 26px;
+                border: 3px solid black;
+                margin-right: 2px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.5s;
+                transform: translateX(-1.5px);
+                .bx-check {
+                    font-size: 20px;
+                }
+            }
+            .j2 {
+                width: 60px;
+            }
+            .j3,
+            .j4,
+            .j5 {
+                width: 100px;
+            }
+            .j6 {
+                width: 310px;
+            }
+            .j7 {
+                width: 160px;
+            }
+            .j8 {
+                width: 120px;
+            }
+        }
+    }
+}
