@@ -82,7 +82,7 @@ function start() {
             <li class="j6">
                 <p class="">
                 ${ob.contentJob}
-                    <i class='bx bx-expand-horizontal'></i>
+                    <i title="Click to show" class='bx bx-expand-horizontal'></i>
                 </p>
             </li>
             <li class="j7">${ob.day}/${ob.month}/${ob.year}</li>
